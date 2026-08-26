@@ -1,0 +1,321 @@
+/*  Responsive css */
+@media (max-width: 850px) {
+nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 32, 39, 0.95);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        padding-top: 80px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        font-size: 1.2em;
+
+        visibility: hidden;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.3s ease,
+            visibility 0.4s;
+        z-index: 999;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    nav.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+        
+
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 2em;
+      align-items: center;
+      justify-content: center;
+        cursor: pointer;
+        z-index: 1000;
+            visibility: visible;
+                opacity: 1;
+    }
+      
+
+    nav ul li {
+        margin: 15px 0;
+    }
+}
+
+
+@media (max-width: 768px) {
+nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 32, 39, 0.95);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        padding-top: 80px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        transform: translateY(-100%);
+        opacity: 0;
+        font-size: 1.2em;
+
+        visibility: hidden;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.3s ease,
+            visibility 0.4s;
+        z-index: 999;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+ nav.active {
+        transform: translateY(0);
+        pointer-events: auto;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul {
+        flex-direction: column;
+         /* background: rgba(0, 0, 0, 0.9); */
+
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.6em;
+        cursor: pointer;
+        z-index: 1000;
+        visibility: visible;
+            opacity: 1;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+       
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+
+
+    /*  The fucking about responsiveness fucking starts here niggro @@niggro */
+    .about-grid {
+        grid-template-columns: 1fr;
+        /* stack cards */
+    }
+
+    .about h1 {
+        font-size: 28px;
+    }
+
+    .about p {
+        font-size: 16px;
+    }
+
+
+
+    /* the fucking services  */
+    .services-grid {
+        grid-template-columns: 1fr;
+        transition: slideIn 0.5s ease-in-out;
+        /* stack cards on mobile */
+    }
+
+    .services h1 {
+        font-size: 28px;
+    }
+
+    .services p {
+        font-size: 16px;
+    }
+
+    /* the fucking contact page */
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        /* stack form and info */
+    }
+
+    .contact h1 {
+        font-size: 28px;
+    }
+
+    .contact p {
+        font-size: 16px;
+    }
+
+    /* QR code styling */
+    .qr h1 {
+        font-size: 28px;
+    }
+
+    .qr p {
+        font-size: 16px;
+    }
+
+    .qr-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .qr-instructions {
+        text-align: left;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ✅ Full-screen mobile layout */
+@media (max-width: 480px) {
+    .auth-body {
+        padding: 0;
+    
+    }
+
+    .form-container {
+        border-radius: 0;
+        width: 100%;
+        max-width: 440px !important;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .form-container h2 {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    input,
+    button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        display: none;
+        /* hide footer on mobile */
+    }
+}
+
+/* ✅ Tablet responsiveness */
+@media (min-width: 481px) and (max-width: 768px) {
+    .form-container {
+        max-width: 650px !important;
+    }
+}
+
+
+/* Generate_qr_code esponsive styling shit */
+
+/* ✅ Mobile-first adjustments */
+@media (max-width: 480px) {
+  
+
+
+    .qr {
+        padding: 100px 15px 40px;
+        overflow: hidden;
+    }
+
+    .qr-title {
+        font-size: 1.4rem;
+    }
+
+    .qr-form {
+        overflow: hidden;
+        max-width: 300px;
+        align-items: center;
+        justify-self: center;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .qr-form select,
+    .qr-form button {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    .qr-img {
+        max-width: 200px;
+        height: auto;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+/* ✅ Tablet responsiveness */
+@media (min-width: 481px) and (max-width: 768px) {
+  
+
+    .qr {
+        padding: 110px 20px 50px;
+    }
+
+    .qr-title {
+        font-size: 1.6rem;
+    }
+
+    .qr-form {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .qr-img {
+        max-width: 220px;
+    }
+}
+
+/* ✅ Desktop responsiveness */
+@media (min-width: 769px) {
+    .qr {
+        padding: 120px 20px 60px;
+    }
+
+    .qr-form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .qr-title {
+        font-size: 1.8rem;
+    }
+
+    .qr-img {
+        max-width: 250px;
+    }
+}

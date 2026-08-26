@@ -1,0 +1,820 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f5f5f5;
+    min-height: 100vh;
+}
+
+/* Default header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(100px);
+    position: fixed;
+
+    transform: translateY(0);
+
+    transition: transform 0.9s ease-in-out;
+
+}
+
+header nav {
+    margin-left: auto;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+
+}
+
+header .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1abc9c;
+
+    cursor: pointer;
+    transition: slideIn 0.5s ease-in-out;
+}
+
+
+
+nav ul {
+    display: flex;
+    list-style: none;
+
+}
+
+
+nav ul li {
+    margin: 0 5px;
+    /* padding: 10px 10px; */
+}
+
+nav ul li a {
+    display: block;
+
+    padding: 14px 18px;
+
+    width: 100%;
+
+    text-decoration: none;
+    color: #f5f5f5;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1abc9c;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: url('../assets/images/bg-pattern.png') no-repeat center center/cover;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background: #1abc9c;
+    padding: 12px 25px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #16a085;
+}
+
+#menu-toggle2 {
+    display: none;
+}
+
+.menu-toggle {
+    font-size: 1.5em;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    backdrop-filter: blur(15px);
+}
+
+
+
+/* About Page */
+.about {
+    padding: 120px 20px 60px;
+    text-align: center;
+}
+
+.about h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #1abc9c;
+}
+
+.about p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    align-self: left;
+    justify-content: auto;
+    transition: slideIn 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    color: #1abc9c;
+    margin-bottom: 15px;
+}
+
+/* Services Page */
+.services {
+    padding: 120px 20px 60px;
+    text-align: center;
+}
+
+.services h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #1abc9c;
+}
+
+.services p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    transition: slideIn 0.5s ease-in-out;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card i {
+    font-size: 40px;
+    color: #1abc9c;
+    margin-bottom: 15px;
+}
+
+.service-card h2 {
+    color: #1abc9c;
+    margin-bottom: 10px;
+}
+
+
+
+/* Contact Page =====================================
+=========================================*/
+.contact {
+    padding: 120px 20px 60px;
+    text-align: center;
+}
+
+.contact h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #1abc9c;
+}
+
+.contact p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.contact-form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5f5f5;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #ccc;
+}
+
+.contact-info {
+    text-align: left;
+}
+
+.contact-info h2 {
+    margin-bottom: 15px;
+    color: #1abc9c;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #1abc9c;
+}
+
+
+
+
+/* =QR Attendance Page ======================================= 
+====================================*/
+.qr {
+    padding: 120px 20px 60px;
+    text-align: center;
+}
+
+.qr h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #1abc9c;
+}
+
+.qr p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.6;
+}
+
+
+
+.qr-note {
+    font-size: 16px;
+    color: #ccc;
+}
+
+.qr-instructions {
+    text-align: left;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+.qr-instructions h2 {
+    color: #1abc9c;
+    margin-bottom: 15px;
+}
+
+.qr-instructions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.qr-instructions li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.qr-instructions i {
+    margin-right: 10px;
+    color: #1abc9c;
+}
+
+/* ==== authentication stylings ==== */
+
+.auth-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #f5f5f5;
+    padding: 20px;
+
+}
+
+
+.error-message {
+    border-radius: 12px;
+    margin-top: 15px;
+    /* background: rgba(220, 53, 69, 0.2) !important; */
+
+    padding: 22px 20px;
+    height: 15% !important;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    color: #ffffff;
+    cursor: default;
+    font-size: 0.95rem;
+    backdrop-filter: blur(20px) !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+    align-items: center;
+    text-align: left;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(-20px);
+    font-family: inherit;
+    position: fixed;
+    top: 20px;
+}
+
+.error-message #error-cancel {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Slide in gently */
+.error-message.show {
+    animation: fadeSlideIn 0.6s ease forwards;
+}
+
+.error-message.hide {
+    animation: fadeSlideOut 0.6s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeSlideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* Form container */
+.form-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Headings */
+.form-container h2 {
+    margin-bottom: 25px;
+    color: #1abc9c;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-top: 18px;
+    font-weight: 600;
+    text-align: left;
+    color: #e0e0e0;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Inputs & Dropdowns */
+input,
+select#role {
+    width: 100%;
+    padding: 14px 16px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 1.5px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+
+    /* FIX 2: Clear native browser control styles that blow past widths */
+    -webkit-appearance: menulist;
+    appearance: menulist;
+}
+
+
+input:focus,
+select#role:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #1abc9c;
+    box-shadow: 0 0 8px rgba(26, 188, 156, 0.4);
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+select#role option {
+    background-color: #1c313a;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 8px;
+    border: none;
+    background: #1abc9c;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(26, 188, 156, 0.3);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #16a085;
+    box-shadow: 0 8px 20px rgba(22, 160, 133, 0.4);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Links */
+.form-container p {
+    margin-top: 25px;
+    font-size: 15px;
+    color: #cccccc;
+}
+
+.form-container a {
+    color: #1abc9c;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling styling alignment */
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+/* ==========================================================================
+   Responsive Query for Mobile Screens.FS..
+   ========================================================================== */
+@media (max-width: 480px) {
+    .auth-body {
+        padding: 10px;
+        justify-content: flex-start;
+
+        padding-top: 40px;
+    }
+
+    .form-container {
+        border-radius: 14px;
+        padding: 35px 20px;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .form-container h2 {
+        font-size: 2rem;
+        /* Bold & prominent display */
+    }
+
+    input,
+    select#role {
+        padding: 16px;
+
+        font-size: 16px;
+        width: 100%;
+
+    }
+
+    button {
+        padding: 16px;
+        font-size: 1.15rem;
+    }
+}
+
+/* Attendance_list.php */
+
+/* Container */
+.contain_atten {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    /* background: #fff; */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Section title */
+.attendance h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.attendance p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table thead {
+    background: #2c3e50;
+    color: #fff;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background: #eef6ff;
+}
+
+
+
+
+
+/* Main container */
+.qr {
+    padding: 120px 20px 60px;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Title */
+.qr-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #1abc9c;
+}
+
+
+
+/* Forms */
+
+.departments {
+    margin-top: 80px !important;
+    margin-bottom: 20px !important;
+
+}
+
+.courses {
+    /* margin-top:80px !important; */
+    margin-bottom: 20px !important;
+
+}
+
+.qr-form {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.qr-form h3 {
+    margin-bottom: 15px;
+    color: #1abc9c;
+    text-align: center;
+}
+
+.qr-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #f5f5f5;
+}
+
+.qr-form input,
+.qr-form select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1.2px solid #1abc9c;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #2d2525;
+    font-size: 1rem;
+}
+
+.qr-form input::placeholder {
+    color: #ddd;
+}
+
+.qr-form button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    background: #1abc9c;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.qr-form button:hover {
+    background: #16a085;
+}
+
+/* QR Display */
+.qr-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 320px;
+    width: 100%;
+    margin: 100px auto 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #1abc9c;
+    border-radius: 12px;
+}
+
+.qr-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+#spinner {
+    display: none;
+    margin-left: 10px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #1abc9c;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ✅ Responsive tweaks */
+@media (max-width: 480px) {
+    .qr {
+        padding: 100px 15px 40px;
+    }
+
+    .qr-title {
+        font-size: 1.6rem;
+    }
+
+    .qr-form {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .qr-img {
+        max-width: 200px;
+    }
+}
